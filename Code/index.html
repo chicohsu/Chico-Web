@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>AR Bot</title>
+    <!--
+    Journey Template
+    http://www.templatemo.com/tm-511-journey
+    -->
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">                <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">                                      <!-- Bootstrap style -->
+    <link rel="stylesheet" type="text/css" href="css/datepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="stylesheet" href="css/templatemo-style.css">                                   <!-- Templatemo style -->
+    <style>
+        #preOrderClose,#preOrderBtn{
+            cursor: pointer;
+        }
+
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<div class="tm-main-content" id="top">
+    <div class="tm-top-bar-bg"></div>
+    <div class="tm-top-bar" id="tm-top-bar">
+        <div class="container">
+            <div class="row">
+                <nav class="navbar navbar-expand-lg narbar-light">
+                    <p><a class="navbar-brand mr-auto" href="Introduction.html">
+                        <img src="img/logo.png" alt="logo"></a></p>
+                    <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse"
+                            data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" onclick="window.location='Introduction.html'">AR Bot <span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#tm-section-2">教材專區</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#tm-section-3">角色介紹</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#tm-section-4">聯繫我們</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="modal" data-target="#preOrder">立即預購</a>
+                                <!-- 變成按鈕 -->
+                            </li>
+                        </ul>
+                        <div class="modal fade" id="preOrder" tabindex="-1" role="dialog" style="z-index: 99999"
+                             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">立即預購</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div>
+                                            <label for="preOrderSex">請問您的性別是？</label>
+                                            <select class="form-control" id="preOrderSex">
+                                                <option>男性</option>
+                                                <option>女性</option>
+                                                <option>不方便透露</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <div class="form-group">
+                                                <label for="preOrderName">請問您的暱稱是？</label>
+                                                <input type="text" class="form-control" id="preOrderName" placeholder="王大明">
+                                            </div>
+                                            <label for="preOrderAge">請問您的年齡是？</label>
+                                            <select class="form-control" id="preOrderAge">
+                                                <option>20歲以下</option>
+                                                <option>21-25歲</option>
+                                                <option>26-30歲</option>
+                                                <option>31-35歲</option>
+                                                <option>36-40歲</option>
+                                                <option>41-45歲</option>
+                                                <option>46歲以上</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="preOrderEmail">若您想收到早鳥優惠消息，請留下email，我們將在第一時間送出通知</label>
+                                            <input type="email" class="form-control" id="preOrderEmail" placeholder="name@example.com">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="preOrderComment">有關ARBot有其他建議嗎？歡迎告訴我們！</label>
+                                            <textarea class="form-control" id="preOrderComment" rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button id="preOrderClose" type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                                        <button id="preOrderBtn" type="button" class="btn btn-success">預購</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div>
+                          <div class="search-box">
+                                <form name="search_form" method="get" class="search_form">
+                                    <input id="search" type="text" />
+                                    <input type="submit" id="search-button" />
+                                </form>
+                            </div>
+                        </div>-->
+
+                    </div>
+
+
+            </div>
+            </nav>
+        </div> <!-- row -->
+    </div> <!-- container -->
+</div> <!-- .tm-top-bar -->
+
+<div class="tm-page-wrap mx-auto">
+    <section class="tm-banner">
+        <div class="tm-container-outer tm-banner-bg">
+            <div class="container">
+
+                <div class="row tm-banner-row tm-banner-row-header"> <!-- col-xs-12 -->
+                </div> <!-- row -->
+                <div>
+
+                    <form action="index.html" method="get" class="tm-section-pad-2">
+
+                        <div class="form-row tm-search-form-row">
+
+                            <div class="form-group tm-form-group tm-form-group-pad tm-form-group-3">
+
+                                <a id="inputCheckIn">
+                            </div>
+                            <div class="form-group tm-form-group tm-form-group-3">
+
+                                <a id="inputCheckOut">
+                            </div>
+                            <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
+                                <label for="btnSubmit">&nbsp;</label>
+                            </div>
+                        </div>
+                    </form>
+
+                </div> <!-- row -->                    </div>  <!-- .container -->
+        </div>     <!-- .tm-container-outer -->
+    </section>
+
+    <section class="p-5 tm-container-outer tm-bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 mx-auto tm-about-text-wrap text-center">
+                    <h2 class="text-uppercase mb-4"><strong>教 材 與 牌 卡 專 區</strong></h2>
+                    <p class="mb-4">Course Materials</p>
+                    <img src="img/Line.png" width="81" height="3" alt=""/>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="tm-container-outer" id="tm-section-2">
+        <section class="tm-slideshow-section">
+            <div class="tm-slideshow">
+                <img src="img/tm-img-01-3.png" alt="Image">
+                <img src="img/tm-img-01-1.png" alt="Image">
+                <img src="img/tm-img-01-2.png" alt="Image">
+
+            </div>
+            <div class="tm-slideshow-description tm-bg-primary">
+                <h2 class="">第一章 冒險啟程</h2>  <!-- 第一章字要縮小 -->
+                <br></br>
+                <p>個性少根筋的人類女性克蘿提雅，目標是研究出解決外城區的能源危機，在因緣際會下獲得古代永續能源之設計圖，但她的生活也將不再平靜......。</p> <!-- 第一章劇情大綱 -->
+                <br></br>
+                <a href="Answer1.html" class="text-uppercase tm-btn tm-btn-white tm-btn-white-primary">觀看關卡</a>
+            </div>
+        </section>
+        <section class="clearfix tm-slideshow-section tm-slideshow-section-reverse">
+
+            <div class="tm-right tm-slideshow tm-slideshow-highlight">
+                <img src="img/tm-img-02-2.png" alt="Image">
+                <img src="img/tm-img-02.png" alt="Image">
+
+            </div>
+
+            <div class="tm-slideshow-description tm-slideshow-description-left tm-bg-highlight">
+                <h2 class="">第二章 洞窟探密</h2>
+                <br></br>
+                <p>克蘿提雅與Mibo為了尋找永續能源材料踏上旅程，沿著地圖來到已有上萬年歷史的鐘乳石洞內，傳說這歷史悠久的鐘乳石洞內，隱藏著尚未發現的秘密......。</p>
+                <br></br>
+                <a href="Answer2.html" class="text-uppercase tm-btn tm-btn-white tm-btn-white-highlight">觀看關卡</a>
+            </div>
+
+        </section>
+        <section class="tm-slideshow-section">
+            <div class="tm-slideshow">
+                <img src="img/tm-img-03-2.png" alt="Image">
+                <img src="img/tm-img-03.png" alt="Image">
+
+            </div>
+            <div class="tm-slideshow-description tm-bg-primary">
+                <h2>第三章 圖書館搜查</h2>
+                <br></br>
+                <p>為了將在洞窟中取得的資料拼湊完整，克蘿提雅與Mibo來到圖書館尋找剩餘的文件，但卻在此遇見......他。</p>
+                <br></br>
+                <a href="Answer3.html" class="text-uppercase tm-btn tm-btn-white tm-btn-white-primary">觀看關卡</a>
+            </div>
+        </section>
+    </div>
+    <div class="tm-container-outer" id="tm-section-3">
+        <ul class="nav nav-pills tm-tabs-links">
+            <li class="tm-tab-link-li">
+                <a href="#1a" data-toggle="tab" class="tm-tab-link">
+                    <img src="img/icon_flag.png" alt="Image" class="img-fluid">
+                    第一話
+                </a>
+            </li>
+            <li class="tm-tab-link-li">
+                <a href="#2a" data-toggle="tab" class="tm-tab-link">
+                    <img src="img/icon_水晶.png" alt="Image" class="img-fluid">
+                    第二話
+                </a>
+            </li>
+            <li class="tm-tab-link-li">
+                <a href="#3a" data-toggle="tab" class="tm-tab-link">
+                    <img src="img/icon_book.png" alt="Image" class="img-fluid">
+                    第三話
+                </a>
+            </li>
+            <li class="tm-tab-link-li">
+                <a href="#4a" data-toggle="tab" class="tm-tab-link active"><!-- Current Active Tab -->
+                    <img src="img/Main_logo.png" alt="Image" class="img-fluid">
+                    主要角色
+                </a>
+            </li>
+            <li class="tm-tab-link-li">
+                <a href="#5a" data-toggle="tab" class="tm-tab-link">
+                    <img src="img/icon_問卷.png" alt="Image" class="img-fluid">
+                    <br>
+                    問卷填寫
+                </a>
+            </li>
+            <li class="tm-tab-link-li">
+                <a href="#6a" data-toggle="tab" class="tm-tab-link">
+                    <img src="img/icon_YT.png" alt="Image" class="img-fluid">
+                    <br>
+                    Youtube
+                </a>
+            </li>
+            <li class="tm-tab-link-li">
+                <a href="#7a" data-toggle="tab" class="tm-tab-link">
+                    <img src="img/icon_FB.png" alt="Image" class="img-fluid">
+                    <br>
+                    FaceBook
+                </a>
+            </li>
+        </ul>
+        <div class="tab-content clearfix">
+
+            <!-- Tab 1 -->
+            <div class="tab-pane fade" id="1a">
+                <div class="tm-recommended-place-wrap">
+                    <div class="tm-recommended-place">
+                        <img src="img/Ky.png" alt="Image" class="img-fluid tm-recommended-img">
+                        <div class="tm-recommended-description-box">
+                            <h3 class="tm-recommended-title">凱里恩斯</h3>
+                            <p class="tm-text-highlight">Kyriance</p>
+                            <p class="tm-text-gray">帝國伍長，Mibo在前往地下避難所路上所遇到的帝國軍，對帝國軍忠心無比，無條件遵從命令，掌握基礎魔法。</p>
+                        </div>
+                        <a class="tm-recommended-price-box">
+                            <p class="tm-recommended-price">第一話</p>
+                            <p class="tm-recommended-price-link"></p>
+                        </a>
+                    </div>
+
+                    <div class="tm-recommended-place">
+                        <img src="img/soldier.png" alt="Image" class="img-fluid tm-recommended-img">
+                        <div class="tm-recommended-description-box">
+                            <h3 class="tm-recommended-title">帝國菁英小兵</h3>
+                            <p class="tm-text-highlight"></p>
+                            <p class="tm-text-gray">全身金閃閃的帝國小兵，體型較大，比帝國小兵更為強悍，為本話Mibo所遇見之最終敵人。</p>
+                        </div>
+                        <a class="tm-recommended-price-box">
+                            <p class="tm-recommended-price">第一話</p>
+                            <p class="tm-recommended-price-link"></p>
+                        </a>
+                    </div>
+                    <br></br>
+                </div>
+
+
+            </div> <!-- tab-pane -->
+
+            <!-- Tab 2 -->
+            <div class="tab-pane fade" id="2a">
+
+                <div class="tm-recommended-place-wrap">
+                    <div class="tm-recommended-place">
+                        <img src="img/bear.png" alt="Image" class="img-fluid tm-recommended-img">
+                        <div class="tm-recommended-description-box">
+                            <h3 class="tm-recommended-title">大熊</h3>
+                            <p class="tm-text-highlight"></p>
+                            <p class="tm-text-gray">長年在洞穴中，似乎在保護著某個古老寶物......。</p>
+                        </div>
+                        <a href="#" class="tm-recommended-price-box">
+                            <p class="tm-recommended-price">第二話</p>
+                            <p class="tm-recommended-price-link"></p>
+                        </a>
+                    </div>
+
+                    <div class="tm-recommended-place">
+                        <img src="img/bat.png" alt="Image" class="img-fluid tm-recommended-img">
+                        <div class="tm-recommended-description-box">
+                            <h3 class="tm-recommended-title">菁英蝙蝠</h3>
+                            <p class="tm-text-highlight"></p>
+                            <p class="tm-text-gray">幫助大熊守護寶物，驅趕來尋寶的人類。</p>
+                        </div>
+                        <a href="#" class="tm-recommended-price-box">
+                            <p class="tm-recommended-price">第二話</p>
+                            <p class="tm-recommended-price-link"></p>
+                        </a>
+                    </div>
+                    <br></br>
+                </div>
+
+            </div> <!-- tab-pane -->
+
+            <!-- Tab 3 -->
+            <div class="tab-pane fade" id="3a">
+
+                <div class="tm-recommended-place-wrap">
+                    <div class="tm-recommended-place">
+                        <img src="img/Lock.png" alt="Image" class="img-fluid tm-recommended-img">
+                        <div class="tm-recommended-description-box">
+                            <h3 class="tm-recommended-title">未解鎖角色</h3>
+                            <p class="tm-text-highlight"></p>
+                            <p class="tm-text-gray"></p>
+                        </div>
+                        <a href="#" class="tm-recommended-price-box">
+                            <p class="tm-recommended-price">第三話</p>
+                            <p class="tm-recommended-price-link">Continue Reading</p>
+                        </a>
+                    </div>
+                    <div class="tm-recommended-place">
+                        <img src="img/Lock.png" alt="Image" class="img-fluid tm-recommended-img">
+                        <div class="tm-recommended-description-box">
+                            <h3 class="tm-recommended-title">未解鎖角色</h3>
+                            <p class="tm-text-highlight"></p>
+                            <p class="tm-text-gray"></p>
+                        </div>
+                        <a href="#" class="tm-recommended-price-box">
+                            <p class="tm-recommended-price">第三話</p>
+                            <p class="tm-recommended-price-link">Continue Reading</p>
+                        </a>
+                    </div>
+                    <br></br>
+                </div>
+
+            </div> <!-- tab-pane -->
+
+            <!-- Tab 4 -->
+            <div class="tab-pane fade show active" id="4a">
+                <!-- Current Active Tab WITH "show active" classes in DIV tag -->
+                <div class="tm-recommended-place-wrap">
+                    <div class="tm-recommended-place">
+                        <img src="img/tm-img-04.jpg" alt="Image" class="img-fluid tm-recommended-img">
+                        <div class="tm-recommended-description-box">
+                            <h3 class="tm-recommended-title">克蘿提雅</h3>
+                            <p class="tm-text-highlight">Kalotia</p>
+                            <p class="tm-text-gray">沉浸於研究的研究宅，個性活潑樂天少根筋，人類女性，目標是研究出解決外城區能源危機的永續能源。</p>
+                        </div>
+                        <a class="tm-recommended-price-box">
+                            <p class="tm-recommended-price">全話</p>
+                            <p class="tm-recommended-price-link"></p>
+                        </a>
+                    </div>
+
+                    <div class="tm-recommended-place">
+                        <img src="img/Mibo3.png" alt="Image" width="271" height="272"
+                             class="img-fluid tm-recommended-img">
+                        <div class="tm-recommended-description-box">
+                            <h3 class="tm-recommended-title">Mibo</h3>
+                            <p class="tm-text-highlight"></p>
+                            <p class="tm-text-gray">克羅提亞的自製使徒兼夥伴，擁有自主意識，吐槽擔當且冷靜。</p>
+                        </div>
+                        <div id="preload-hover-img"></div>
+                        <a class="tm-recommended-price-box">
+                            <p class="tm-recommended-price">全話</p>
+                            <p class="tm-recommended-price-link"></p>
+                        </a>
+                    </div>
+                    <br></br>
+                </div>
+            </div> <!-- tab-pane -->
+
+            <!-- Tab 5 -->
+            <div class="tab-pane fade" id="5a">
+
+                <div class="tm-recommended-place-wrap">
+                    <div class="tm-recommended-place">
+                        <img src="img/GoogleList.png" alt="Image" class="img-fluid tm-recommended-img">
+                        <div class="tm-recommended-description-box">
+                            <h3 class="tm-recommended-title">AR Bot 滿意度問卷及建議填寫區</h3>
+                            <p class="tm-text-highlight"></p>
+                            <p class="tm-text-gray"></p>
+                        </div>
+                        <a href="https://forms.gle/4sBmjGyJwe7q1FEeA" class="tm-recommended-price-box">
+                            <p class="tm-recommended-price">前往</p>
+                            <p class="tm-recommended-price-link">Google 表單</p>
+                        </a>
+                    </div>
+
+                    <br></br>
+                </div>
+            </div> <!-- tab-pane -->
+
+            <!-- Tab 6 -->
+            <div class="tab-pane fade" id="6a">
+
+                <div class="tm-recommended-place-wrap">
+                    <div class="tm-recommended-place">
+                        <img src="img/Teach.png" alt="Image" class="img-fluid tm-recommended-img">
+                        <div class="tm-recommended-description-box">
+                            <h3 class="tm-recommended-title">教學影片專區</h3>
+                            <p class="tm-text-highlight"></p>
+                            <p class="tm-text-gray"></p>
+                        </div>
+                        <a href="https://www.youtube.com/channel/UC9O2sqgbvIAt0nic7rvvhIQ"
+                           class="tm-recommended-price-box">
+                            <p class="tm-recommended-price">前往</p>
+                            <p class="tm-recommended-price-link">Youtube</p>
+                        </a>
+                    </div>
+
+                    <br></br>
+                </div>
+
+
+            </div> <!-- tab-pane -->
+
+            <!-- Tab 7 -->
+            <div class="tab-pane fade" id="7a">
+
+                <div class="tm-recommended-place-wrap">
+                    <div class="tm-recommended-place">
+                        <img src="img/FB-KA.png" alt="Image" class="img-fluid tm-recommended-img">
+                        <div class="tm-recommended-description-box">
+                            <h3 class="tm-recommended-title">新訊更新</h3>
+                            <p class="tm-text-highlight"></p>
+                            <p class="tm-text-gray"></p>
+                        </div>
+                        <a href="https://www.facebook.com/%E7%80%BE%E5%9C%96%E6%96%B0%E5%AA%92%E9%AB%94%E7%A7%91%E6%8A%80-100410174813645/"
+                           class="tm-recommended-price-box">
+                            <p class="tm-recommended-price">前往</p>
+                            <p class="tm-recommended-price-link">FaceBook</p>
+                        </a>
+                    </div>
+
+                    <br></br>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- tab-pane -->
+</div>
+</div>
+
+<div class="tm-container-outer tm-position-relative" id="tm-section-4">
+    <div></div>
+</div> <!-- .tm-container-outer -->
+
+<footer id="footer">
+    <div class="container">
+        <section class="links">
+            <div class="row">
+                <section class="2u 6u(medium) 12u$(small)">
+
+                    <ul class="unstyled">
+                        <li><a href="Introduction.html">首頁</a></li>
+                        <li><a href="#">關於我們</a></li>
+                    </ul>
+                </section>
+                <section class="2u 6u(medium) 12u$(small)">
+
+                    <ul class="unstyled">
+                        <li><a href="#">最新消息</a></li>
+                        <li><a href="#">媒體報導</a></li>
+                    </ul>
+                </section>
+                <section class="2u 6u(medium) 12u$(small)">
+
+                    <ul class="unstyled">
+                        <li><a href="#">合作專區</a></li>
+                        <li><a href="#">聯繫我們</a></li>
+                    </ul>
+
+                </section>
+
+                <section class="2u 12u(medium) 12u$(small)">
+
+                    <ul class="unstyled">
+                        <li><a></a></li>
+                        <li><a></a></li>
+                    </ul>
+                </section>
+                <section class="4u$ 12u$(medium) 12u$(small)">
+
+                    <ul class="unstyled">
+                        <li><a>瀾圖新媒體科技
+                            <br>Lighter New Media Technology company Co.,Ltd.</a></li>
+                        <li><a>egpa918
+                            @gmail.com</a></li>
+                    </ul>
+                </section>
+
+            </div>
+        </section>
+        <div class="row">
+            <div class="4u$ 6u$(medium) 6u$(small)">
+                <ll class="unstyled">
+                    <img src="img/Logo_W.png" width="200" height="50" alt=""/>
+                </ll>
+            </div>
+
+            <div class="4.5u 6u$(medium) 6u$(small)">
+                <ul class="copyright unstyled">
+                    <li>&copy; 2020 Lighter New Media Technology company Co.,Ltd. All Rights Reserved.</li>
+                </ul>
+            </div>
+            <div class="2u 6u$(medium) 6u$(small)">
+                <ul class="unstyled">
+                    <li><a></a></li>
+                    <li><a></a></li>
+                </ul>
+            </div>
+            <div class="1u$ 12u$(medium) 12u$(small)">
+                <ll class="icons">
+                    <img src="img/FB.png" width="30" height="30" alt=""/>
+                </ll>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</div> <!-- .main-content -->
+
+<!-- load JS files -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function(){
+        emailjs.init("user_6UtOmNqpiM7sJILpMvcyU");
+    })();
+</script>
+<script src="js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+<script src="js/popper.min.js"></script>                    <!-- https://popper.js.org/ -->
+<script src="js/bootstrap.min.js"></script>                 <!-- https://getbootstrap.com/ -->
+<script src="js/datepicker.min.js"></script>                <!-- https://github.com/qodesmith/datepicker -->
+<script src="js/jquery.singlePageNav.min.js"></script>
+<!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->
+<script src="slick/slick.min.js"></script>                  <!-- http://kenwheeler.github.io/slick/ -->
+<script src="js/jquery.scrollTo.min.js"></script>           <!-- https://github.com/flesler/jquery.scrollTo -->
+<script>
+    /* Google Maps
+    ------------------------------------------------*/
+    var map = '';
+    var center;
+
+    function initialize() {
+        var mapOptions = {
+            zoom: 16,
+            center: new google.maps.LatLng(37.769725, -122.462154),
+            scrollwheel: false
+        };
+
+        map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
+
+        google.maps.event.addDomListener(map, 'idle', function () {
+            calculateCenter();
+        });
+
+        google.maps.event.addDomListener(window, 'resize', function () {
+            map.setCenter(center);
+        });
+    }
+
+    function calculateCenter() {
+        center = map.getCenter();
+    }
+
+    function loadGoogleMap() {
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVWt4rJfibfsEDvcuaChUaZRS5NXey1Cs&v=3.exp&sensor=false&' + 'callback=initialize';
+        document.body.appendChild(script);
+    }
+
+    /* DOM is ready
+    ------------------------------------------------*/
+    $(function () {
+
+        // Change top navbar on scroll
+        $(window).on("scroll", function () {
+            if ($(window).scrollTop() > 100) {
+                $(".tm-top-bar").addClass("active");
+            } else {
+                $(".tm-top-bar").removeClass("active");
+            }
+        });
+
+        // Smooth scroll to search form
+        $('.tm-down-arrow-link').click(function () {
+            $.scrollTo('#tm-section-search', 300, {easing: 'linear'});
+        });
+
+        // Date Picker in Search form
+        var pickerCheckIn = datepicker('#inputCheckIn');
+        var pickerCheckOut = datepicker('#inputCheckOut');
+
+        // Update nav links on scroll
+        $('#tm-top-bar').singlePageNav({
+            currentClass: 'active',
+            offset: 60
+        });
+
+        // Close navbar after clicked
+        $('.nav-link').click(function () {
+            $('#mainNav').removeClass('show');
+        });
+
+        // Slick Carousel
+        $('.tm-slideshow').slick({
+            infinite: true,
+            arrows: true,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        });
+
+        loadGoogleMap();                                       // Google Map
+        $('.tm-current-year').text(new Date().getFullYear());  // Update year in copyright
+    });
+
+    let preOrderBtn = document.getElementById("preOrderBtn");
+
+    preOrderBtn.addEventListener("click",function () {
+        let formData ={
+            "name":document.getElementById("preOrderName").value,
+            "sex":document.getElementById("preOrderSex").value,
+            "age":document.getElementById("preOrderAge").value,
+            "email":document.getElementById("preOrderEmail").value,
+            "comment":document.getElementById("preOrderComment").value,
+        }
+        var template_params = {
+            "from_name": "from_name_value",
+            "to_name": "to_name_value",
+            "message_html": `
+                <p>暱稱：${formData.name}</p>
+                <p>性別：${formData.sex}</p>
+                <p>年齡：${formData.age}</p>
+                <p>信箱：${formData.email}</p>
+                <p>建議：${formData.comment}</p>
+            `
+        }
+        // console.log(template_params);
+
+        emailjs.send('default_service', 'template_rLeVMNT7', template_params)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                alert("已經收到您的訂單了，請持續關注Email以獲得後續訊息唷！")
+            }, function(error) {
+                console.log('FAILED...', error);
+            });
+    })
+
+</script>
+
+</body>
+</html>

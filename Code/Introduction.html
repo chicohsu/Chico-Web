@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>AR Bot</title>
+<!-- 
+Journey Template 
+http://www.templatemo.com/tm-511-journey
+-->
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">                <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">                                      <!-- Bootstrap style -->
+    <link rel="stylesheet" type="text/css" href="css/datepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="stylesheet" href="css/templatemo-style.css">                                   <!-- Templatemo style -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <!--[if lt IE 9]>
+              <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+              <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+          <![endif]-->
+      </head>
+
+      <body>
+        <div class="tm-main-content" id="top">
+            <div class="tm-top-bar-bg"></div>    
+            <div class="tm-top-bar" id="tm-top-bar">
+                <div class="container">
+                    <div class="row">
+                        <nav class="navbar navbar-expand-lg narbar-light">
+                            <p><a class="navbar-brand mr-auto" href="#">
+								<img src="img/logo.png" alt="Site logo"></a></p>
+                            <button type="button" id="nav-toggle" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div id="mainNav" class="collapse navbar-collapse tm-bg-white">
+                                <ul class="navbar-nav ml-auto">
+                                  <li class="nav-item">
+									  <a class="nav-link" onclick="window.location='Introduction.html'">AR Bot <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                   <a class="nav-link" onclick="window.location='index.html'">教材專區</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" onclick="window.location='index.html'">角色介紹</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#tm-section-4">聯繫我們</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">繁體中文</a>   <!-- 變成按鈕 -->
+                                </li>
+                            </ul>
+                            <!--<div>
+                              <div class="search-box">  
+                                    <form name="search_form" method="get" class="search_form">
+                                        <input id="search" type="text" />
+                                        <input type="submit" id="search-button" />
+                                    </form>
+                                </div>
+                            </div>-->
+
+                        </div>
+                        
+                               
+                        </div>                            
+                    </nav>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- .tm-top-bar -->
+
+        <div class="tm-page-wrap mx-auto">
+            <section class="tm-banner">
+                <div class="tm-container-outer tm-banner-bg">
+                    <div class="container">
+
+                      <div class="row tm-banner-row tm-banner-row-header">
+							<!-- col-xs-12 -->                      
+                        </div> <!-- row -->
+                        <div><img src="img/logo2.png" width="300" height="100" alt=""/>
+							
+						  <table width="320" height="44" border="0" cellpadding="0" cellspacing="0" style="width:60;">
+                            <form action="index.html" method="get" class="tm-section-pad-2">
+								
+								<tbody><tr>
+									<td align="center"><a href="index.html" class="text-uppercase btn-primary tm-btn">牌卡專區</a></td>
+									<td ><a href="index.html" class="text-uppercase btn-primary tm-btn ">角色介紹</a></td>
+									</tr>
+								</tbody>	
+							</table>
+                                <div class="form-row tm-search-form-row">
+
+                                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-3">
+                                        
+                                        <a id="inputCheckIn">
+                                    </div>
+                                    <div class="form-group tm-form-group tm-form-group-3">
+                                        
+                                        <a  id="inputCheckOut">
+                                    </div>
+                                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
+                                        <label for="btnSubmit">&nbsp;</label>
+									</div>
+                              </div>                              
+                          </form>
+
+                  </div> <!-- row -->                    </div>  <!-- .container -->                   
+              </div>     <!-- .tm-container-outer -->                 
+            </section>
+
+            <section class="p-5 tm-container-outer tm-bg-gray">         
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 mx-auto tm-about-text-wrap text-center">                        
+                            <h2 class="text-uppercase mb-4 text-center">關於 AR Bot</h2>
+                            <h6 class="mb-4">AR 擴增實境教育機器人</h6>
+							<img src="img/Line.png" width="81" height="3" alt=""/>
+                           
+							</a> 
+								<div class="entry mb-4">
+									<p class="text-left">能源危機，衝擊著克蘿提雅與 Mibo 所生活的世界，為了給熟悉的臉孔帶來笑顏，夢想研發出傳說中的永續能源，毅然決然踏上冒險旅程，政府的陰謀、危險的禁地，究竟前方還有多少挑戰等待著他們呢?</p>
+
+									<p class="text-left">AR Bot 引導孩子逐漸了解並習慣以運算思維的概念進行問題分析並提出解決方案，並且透過設計虛擬機器人過程中的創造、思考與討論活動進一步提升孩子的程式邏輯能力與創造力。打造讓孩子在未來的學習上無往不利的邏輯能力。</p>
+
+									<p class="text-left">專業師資進行關卡與教材設計，第一線的教師團隊讓 AR Bot 最貼近學習。</p>
+
+									<p class="text-left">AR Bot 使用最新 ARCore 與 ARKit 技術，讓您花費些許費用，就能讓孩子使用虛擬機器人學習，最重要是使用 AR Bot 學習完後，還能銜接真實機器人，讓您的孩子循序漸進地進行學習！</p>
+
+									<p class="text-left">讓 AR Bot 成為您孩子學習上，指引道路的耀眼明星！</p>
+                                    <br>
+                                    <p class="text-left">本計畫受教育部 108 年「虛擬教育實境暨擴增實境教學應用教材開發與教學實施計畫」補助製作。</p>
+								</div>
+								<h6>即刻下載</h6>
+								<img src="img/Line.png" width="350" height="1" alt=""/>
+								<br>
+								<a href="https://play.google.com/store/apps/details?id=com.srtgo.ar.codestar.edu"><img src="img/AndroidQR.png" width="170" height="200" alt=""></a>
+								<a href="https://apps.apple.com/tw/app/ar-bot/id1493250769"><img src="img/iOSQR.png" width="170" height="200" alt=""></a>
+                        </div>
+					</div>
+				
+                </div>            
+            </section>
+				
+            </div>        
+            <div class="tm-container-outer" id="tm-section-3"> </div>
+
+            <div class="tm-container-outer tm-position-relative" id="tm-section-4">
+                <div></div>
+</div> <!-- .tm-container-outer -->
+
+           <footer id="footer">
+				<div class="container">
+					<section class="links">
+						<div class="row">
+							<section class="2u 6u(medium) 12u$(small)">
+								
+								<ul class="unstyled">
+									<li><a href="#">首頁</a></li>
+									<li><a href="#">關於我們</a></li>
+								</ul>
+							</section>
+							<section class="2u 6u(medium) 12u$(small)">
+								
+								<ul class="unstyled">
+									<li><a href="#">最新消息</a></li>
+									<li><a href="#">媒體報導</a></li>
+								</ul>
+							</section>
+							<section class="2u 6u(medium) 12u$(small)">
+								
+								<ul class="unstyled">
+									<li><a href="#">合作專區</a></li>
+									<li><a href="#">聯繫我們</a></li>
+								</ul>
+								
+							</section>
+							
+							<section class="2u 12u(medium) 12u$(small)">
+								
+								<ul class="unstyled">
+									<li><a></a></li>
+									<li><a></a></li>
+								</ul>
+							</section>
+							<section class="4u$ 12u$(medium) 12u$(small)">
+							
+								<ul class="unstyled">
+									<li><a>瀾圖新媒體科技
+										<br>Lighter New Media Technology company Co.,Ltd.</a></li>
+									<li><a>egpa918
+										@gmail.com</a></li>
+								</ul>
+							</section>
+							
+						</div>
+					</section>
+					<div class="row">
+					  <div class="4u$ 6u$(medium) 6u$(small)">
+							<ll class="unstyled">
+								<img src="img/Logo_W.png" width="200" height="50" alt=""/> 
+							</ll>
+						</div>
+						
+						<div class="4.5u 6u$(medium) 6u$(small)">
+							<ul class="copyright unstyled">
+								<li>&copy; 2020 Lighter New Media Technology company Co.,Ltd. All Rights Reserved.</li>
+							</ul>
+						</div>
+						<div class="2u 6u$(medium) 6u$(small)">
+							<ul class="unstyled">
+									<li><a></a></li>
+									<li><a></a></li>
+							</ul>
+						</div>
+					  <div class="1u$ 12u$(medium) 12u$(small)">
+							<ll class="icons">
+								<img src="img/FB.png" width="30" height="30" alt=""/> 
+							</ll>
+						</div>
+					</div>
+				</div>
+			</footer>
+</div>
+    </div> <!-- .main-content -->
+
+    <!-- load JS files -->
+    <script src="js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+    <script src="js/popper.min.js"></script>                    <!-- https://popper.js.org/ -->       
+    <script src="js/bootstrap.min.js"></script>                 <!-- https://getbootstrap.com/ -->
+    <script src="js/datepicker.min.js"></script>                <!-- https://github.com/qodesmith/datepicker -->
+    <script src="js/jquery.singlePageNav.min.js"></script>      <!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->
+    <script src="slick/slick.min.js"></script>                  <!-- http://kenwheeler.github.io/slick/ -->
+    <script src="js/jquery.scrollTo.min.js"></script>           <!-- https://github.com/flesler/jquery.scrollTo -->
+    <script> 
+        /* Google Maps
+        ------------------------------------------------*/
+        var map = '';
+        var center;
+
+        function initialize() {
+            var mapOptions = {
+                zoom: 16,
+                center: new google.maps.LatLng(37.769725, -122.462154),
+                scrollwheel: false
+            };
+
+            map = new google.maps.Map(document.getElementById('google-map'),  mapOptions);
+
+            google.maps.event.addDomListener(map, 'idle', function() {
+              calculateCenter();
+          });
+
+            google.maps.event.addDomListener(window, 'resize', function() {
+              map.setCenter(center);
+          });
+        }
+
+        function calculateCenter() {
+            center = map.getCenter();
+        }
+
+        function loadGoogleMap(){
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVWt4rJfibfsEDvcuaChUaZRS5NXey1Cs&v=3.exp&sensor=false&' + 'callback=initialize';
+            document.body.appendChild(script);
+        } 
+
+        /* DOM is ready
+        ------------------------------------------------*/
+        $(function(){
+
+            // Change top navbar on scroll
+            $(window).on("scroll", function() {
+                if($(window).scrollTop() > 100) {
+                    $(".tm-top-bar").addClass("active");
+                } else {                    
+                 $(".tm-top-bar").removeClass("active");
+                }
+            });
+
+            // Smooth scroll to search form
+            $('.tm-down-arrow-link').click(function(){
+                $.scrollTo('#tm-section-search', 300, {easing:'linear'});
+            });
+
+            // Date Picker in Search form
+            var pickerCheckIn = datepicker('#inputCheckIn');
+            var pickerCheckOut = datepicker('#inputCheckOut');
+
+            // Update nav links on scroll
+            $('#tm-top-bar').singlePageNav({
+                currentClass:'active',
+                offset: 60
+            });
+
+            // Close navbar after clicked
+            $('.nav-link').click(function(){
+                $('#mainNav').removeClass('show');
+            });
+
+            // Slick Carousel
+            $('.tm-slideshow').slick({
+                infinite: true,
+                arrows: true,
+                slidesToShow: 1,
+                slidesToScroll: 1
+            });
+
+            loadGoogleMap();                                       // Google Map                
+            $('.tm-current-year').text(new Date().getFullYear());  // Update year in copyright           
+        });
+
+    </script>             
+
+</body>
+</html>
